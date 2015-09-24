@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link href='css/materialize.css' rel='stylesheet' />
+</head>
+<body ng-app='myApp'>
+	<!--5 add navbar for $routeProvider -->
+	<div class="container">
+	 <a href="#/">login</a> | <a href="#/bids">Bids</a> | <a href="#/results">Results</a>
+	</div>
+
+	<div ng-view="">
+	</div>
+
+	<script src='js/angular.js'/></script>
+	<script src='js/jquery-2.1.4.min.js' /></script>
+	<!--5 add lib file-->
+	<script src='js/angular-route.js'/></script>
+	<script src='angular/app.js'/></script>
+	<script src='angular/usersController.js'/></script>
+	<script src='angular/usersFactory.js'/></script>	
+ 	<script src='angular/bidsController.js'/></script>
+	<script src='angular/bidsFactory.js'/></script>	
+	<!--
+	<script src='angular/resultsController.js'/></script>
+	<script src='angular/resultsFactory.js'/></script>  -->	
+
+<!-- -->
+</body>
+</html>
