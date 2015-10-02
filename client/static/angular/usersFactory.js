@@ -1,6 +1,7 @@
 myApp.factory('usersFactory', function ($http, $route, $location) {
 	var factory = {};
-	var currentUser;
+	//var currentUser;
+	var thisUser;
 
 	factory.login = function (user, callback) {
 		console.log('factory.login', user);
@@ -19,8 +20,8 @@ myApp.factory('usersFactory', function ($http, $route, $location) {
 	}
 
 	factory.getThisUser = function(callback) {
-		callback(currentUser);
-		console.log('userfactory getThisUser',currentUser);
+		callback(thisUser);
+		console.log('userfactory getThisUser',thisUser);
 	}
 
 	//3 create getHeros method to a callback 

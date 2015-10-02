@@ -12,6 +12,9 @@ myApp.config(function ($routeProvider) {
 	.when('/results',{
 		templateUrl: 'partials/view2results.html'
 	})
+	.when('/products',{
+		templateUrl: 'partials/view3products.html'
+	})
 	// .otherwise({
 	// 	redirectTo: '/'
 	//})

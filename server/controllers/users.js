@@ -13,7 +13,7 @@ module.exports =  {
 		//MVC model
 		User.find({}, function(err, results) {
 	       if(err) {
-	         console.log('err con show', err);
+	         //console.log('err con show', err);
 	       } else {
 	         res.json(results);
 	         //console.log('con show', results)
@@ -22,12 +22,12 @@ module.exports =  {
 	},
 
 	adduser: function(req, res) {
-		console.log('con addfriend', req.body.name);
+		//console.log('con addfriend', req.body.name);
 		var friends = new User({name:req.body.name, created:Date.now()});
 		friends.save(function(err) {
 			// console.log('11');
 			if(err) {
-				console.log("err con create", err);
+				//console.log("err con create", err);
 			} else {
 				console.log("addfriend", friends);
 				//res.redirect('/');

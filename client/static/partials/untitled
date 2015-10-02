@@ -1,0 +1,47 @@
+<!--1b add ng-controller directive to div container -->
+<div class="container" ng-controller='bidsController'>
+	    
+
+
+<div class="row">
+	<div class="col s12 m12 l12"> 
+		<!--4 filter_name -->
+		<label for="search1">Search:</label>
+		<input id="search1" type="text" ng-model="filter_name">
+
+		<div ng-repeat="product in products | filter:filter_name | orderBy:'-created'" class="col s12 m4 l3">
+			<div class="card">
+				<div class="card-image"><img src="{{product.imageurl}}">
+					<span class="card-title"><input class="btn-floating waves-effect waves-light red" type="submit" value="X" ng-click="delete(product)"></span>
+				</div>
+
+				<div class="card-content grey darken-1 white-text center-align">
+					<h5>{{product.name}}</h5>
+
+
+
+		  	<form class='form'>
+		  	<!-- 	<input id="product1" class='form-control' type='text' value="{{product._id}}" name='name' ng-model='newBid.name' required> -->
+
+		  	  
+		  			<label for="name1">Name:</label> 
+		  			<!--2b ng-model -->
+		  			<input id="name1" class='form-control' type='text' name='amount' ng-model='newCake.amount' required>
+		  	
+		  			<!--2c ng-click -->
+		  			<input class= "waves-effect waves-light btn blue" type="create" value="Submit" ng-click='addBid(product)'>
+		  		
+
+		  	</form>
+
+
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- ends col -->
+</div> <!-- ends row -->
+
+
+
+</div> <!-- ends container -->

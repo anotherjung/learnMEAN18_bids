@@ -1,6 +1,5 @@
 myApp.controller('usersController', function ($scope, usersFactory, $location) {
 
-
 	$scope.addUser = function (newUser) {				
 		console.log('userController', $scope.newUser);
 
@@ -14,10 +13,6 @@ myApp.controller('usersController', function ($scope, usersFactory, $location) {
 			});
 			$scope.newUser = {};
 	} //ends
-
-
-	
-
 
 })
 

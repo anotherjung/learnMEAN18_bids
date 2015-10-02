@@ -1,0 +1,73 @@
+<!--1b add ng-controller directive to div container -->
+<div class="container" ng-controller='productsController'>
+<!-- {{products}} -->
+
+
+
+	  	<div class="row">
+	  		<div class="col s12 m12 l12"> 
+	  		<h4 class="center">Add a new product</h4>
+		    <h5 class="error hide red-text">Name already exist. Please enter new name</h5>
+		  	<form class='form'>
+
+		  	  
+		  			<label for="name1">Name:</label> 
+		  	
+		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newProduct.name' required>
+		  
+
+		  	 
+		  			<label for="image1">Image (url):</label> 
+		  
+		  			<input id="image1" class='form-control' type='text' name='imageurl' ng-model='newProduct.imageurl'>
+		  	
+  	
+		  
+		  			<input class= "waves-effect waves-light btn blue" type="create" value="Submit" ng-click='addProduct()'>
+		  		
+
+		  	</form>
+	  		</div>
+	  	</div>
+
+
+
+
+	  	<div class="row">
+	  	 <div class="col s12 m12 l12"> 
+	  	 	<!--4 filter_name -->
+	  	 	<label for="search1">Search:</label>
+	  	 	<input id="search1" type="text" ng-model="filter_name">
+		<!-- 
+		<table>
+			<tr ng-repeat="product in products">
+				<td><span ng-bind="product.name"></span></td>
+				<td><span ng-bind="product.name"></span></td>
+			</tr>
+		</table>	 -->
+
+	  	<div ng-repeat="product in products | filter:filter_name | orderBy:'-created'" class="col s12 m4 l3">
+	  		<div class="card small">
+	  			<div class="card-image"><img src="{{product.imageurl}}">
+	  			<span class="card-title"><input class="btn-floating waves-effect waves-light red" type="submit" value="X" ng-click="delete(product)"></span>
+	  			</div>
+
+	  			<div class="card-content grey darken-1 white-text center-align">
+	  				
+	  				 					
+	  					<h5>{{product.name}}</h5>
+	  					<h5>qty: {{product.qty}}</h5>
+	  					
+	  					<!-- <p>date: {{product.created | date:'MMMM d, yyyy - h:mm a'}}</p>
+ -->
+	  		
+	  			</div>
+	  		</div>
+	  	</div>
+
+		</div>
+		</div>
+</div>
+	    
+
+</div>

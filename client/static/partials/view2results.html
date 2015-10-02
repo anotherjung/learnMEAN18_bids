@@ -1,6 +1,39 @@
 <!--1b add ng-controller directive to div container -->
 <div class="container" ng-controller='resultsController'>
 
+<!-- {{bids}} -->
+
+	  	<div class="row">
+	  	 <div class="col s12 m12 l12"> 
+	  	 	<!--4 filter_name -->
+	  	 	<label for="search1">Search:</label>
+	  	 	<input id="search1" type="text" ng-model="filter_name">
+		<!-- 
+		<table>
+			<tr ng-repeat="bid in bids">
+				<td><span ng-bind="bid.name"></span></td>
+				<td><span ng-bind="bid.name"></span></td>
+			</tr>
+		</table>	 -->
+	  	<div ng-repeat="bid in bids | filter:filter_name | orderBy:'-amount' " class="col s12 m4 l3">
+	  		<div class="card Medium">
+	  			<div class="card-image"><img src="{{bid._product.imageurl}}">
+	  				<!-- <span class="card-title"><input class="btn-floating waves-effect waves-light red" type="submit" value="X" ng-click="delete(product)"></span> -->
+	  			</div>
+	  			<div class="card-content grey darken-1 white-text center-align">
+	  				 	<p>{{bid._product.name}}</p>				
+	  					<p>{{bid.name}}</p>
+	  					<p>$ {{bid.amount}}</p>
+	  					<p>{{bid._user.name}}</p>
+	  					<p>{{bid.created | date:'MMMM d, yyyy - h:mm a'}}</p>
+	  			</div>
+	  		</div>
+	  	</div>
+
+		</div>
+		</div>
+</div>
+
 
 
 </div>
